@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="course_list_tree">
+            <field name="name">course.list.tree</field>
+            <field name="model">course.list</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="kode"/>
+                    <field name="name"/>
+                    <field name="price" avg="Average"/>
+                    <field name="bidang" string="Kategori"/>
+                    <field name="is_aktif"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="course_list_tree">
+            <field name="name">course.list.tree</field>
+            <field name="model">course.list</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="kode"/>
+                        <field name="name"/>
+                        <field name="price"/>
+                        <field name="bidang"/>
+                        <field name="is_aktif"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="course_list_action">
+            <field name="name">List Course</field>
+            <field name="res_model">course.list</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem
+            id="submenu_course_list"
+            name="Course"
+            parent="course_data_menu"
+            sequence="30"
+            action="course_list_action"
+        />
+    </data>
+</odoo>

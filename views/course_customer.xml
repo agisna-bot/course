@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="course_customer_tree">
+            <field name="name">course.customer.tree</field>
+            <field name="model">course.customer</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="category"/>
+                    <field name="phone"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="course_customer_form">
+            <field name="name">course.customer.form</field>
+            <field name="model">course.customer</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                    </header>
+                    <sheet>
+                        <group col="6" colspan="2">
+                            <group col="2" colspan="2">
+                                <field name="name"/>
+                            </group>
+                            <group col="2" colspan="2">
+                                <field name="phone"/>
+                            </group>
+                            <group col="2" colspan="2">
+                                <field name="category"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Address">
+                                <field name="address_ids">
+                                    <tree editable="bottom">
+                                        <field name="is_main"/>
+                                        <field name="name"/>
+                                        <field name="address"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="course_customer_action">
+            <field name="name">Customer</field>
+            <field name="res_model">course.customer</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem 
+            id="submenu_course_customer"
+            name="Customer"
+            parent="course_data_menu"
+            sequence="25"
+            action="course_customer_action"
+        />
+
+    </data>
+</odoo>
