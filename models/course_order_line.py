@@ -10,6 +10,8 @@ class CourseOrderLine(models.Model):
 
     order_id = fields.Many2one('course.order', string='Order')
 
+    trainer_id = fields.Many2one('course.trainer', string='Trainer')
+
     @api.onchange('course_id')
     def get_price(self):
         self.price = self.course_id.price
@@ -28,3 +30,4 @@ class CourseOrderLine(models.Model):
     def get_price_total(self):
         for doc in self:
             doc.price_total = doc.quantity * doc.price
+        

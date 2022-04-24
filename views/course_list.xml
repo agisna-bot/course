@@ -9,14 +9,14 @@
                     <field name="kode"/>
                     <field name="name"/>
                     <field name="price" avg="Average"/>
-                    <field name="bidang" string="Kategori"/>
+                    <!-- <field name="bidang" string="Kategori"/> -->
                     <field name="is_aktif"/>
                 </tree>
             </field>
         </record>
 
-        <record model="ir.ui.view" id="course_list_tree">
-            <field name="name">course.list.tree</field>
+        <record model="ir.ui.view" id="course_list_form">
+            <field name="name">course.list.form</field>
             <field name="model">course.list</field>
             <field name="arch" type="xml">
                 <form>
@@ -24,7 +24,9 @@
                         <field name="kode"/>
                         <field name="name"/>
                         <field name="price"/>
-                        <field name="bidang"/>
+                    </group>
+                    <group>
+                        <!-- <field name="bidang"/> -->
                         <field name="is_aktif"/>
                     </group>
                 </form>

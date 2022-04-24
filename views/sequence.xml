@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0"> 
+        <record model="ir.sequence" id="course_order_sequence" >
+            <field name="name">Course order</field>
+            <field name="code">course.order.sequence</field>
+            <field name="prefix">Order-</field>
+            <field name="padding">5</field>
+            <field name="suffix">-%(day)s-%(month)s-%(y)s</field>
+        </record>
+    </data>
+</odoo>
